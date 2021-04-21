@@ -4,32 +4,34 @@
   &nbsp;&nbsp;
   <span *ngIf="initialInvestment"><b>{{ initialInvestment | currency }}</b></span>
 
-  <br /><br />
+  <br/><br/>
 
   <label for="averageInvestmentEachYear">Average Investment each year: </label>
   <input  type="number" id="averageInvestmentEachYear" name="averageInvestmentEachYear" [(ngModel)]="averageInvestmentEachYear"/>
   &nbsp;&nbsp;
   <span *ngIf="averageInvestmentEachYear"><b>{{averageInvestmentEachYear | currency }}  each year</b></span>&nbsp;
 
-  <br /><br />
+  <br/><br/>
 
   <label for="percentageOfGrowth">Percentage Of Growth each year: </label>
   <input type="number" id="percentageOfGrowth" name="percentageOfGrowth" [(ngModel)]="percentageOfGrowth"/>
   &nbsp;&nbsp;
   <span *ngIf="percentageOfGrowth"><b>{{percentageOfGrowth/100 | percent }}</b></span>
 
-  <br /><br />
+  <br/><br/>
 
   <label for="numberOfYears">Number Of Years </label>
   <input type="number" id="numberOfYears" name="numberOfYears" [(ngModel)]="numberOfYears"/>
   &nbsp;&nbsp;
   <span *ngIf="numberOfYears"><b>{{numberOfYears | number }} year(s)</b></span>&nbsp;
 
-  <br /><br />
+  <br/><br/>
 
   <div *ngIf="numberOfYears > 0 && numberOfYears != null">
     Your invest will grow in {{numberOfYears}} year(s) from {{initialInvestment | currency}} to
     <b>{{investmentCalculation(initialInvestment, percentageOfGrowth,
     numberOfYears, averageInvestmentEachYear) | currency}}</b> if you invest average {{averageInvestmentEachYear | currency}} each year.
   </div>
+
+  <button id= 'btn-clear' (click)="handleClear()">Clear All</button>
 </form>

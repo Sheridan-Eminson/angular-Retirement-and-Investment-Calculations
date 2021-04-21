@@ -6,3 +6,7 @@ div {
   padding: 12px 20px;
   background-color: #4CAF50;
 }
+
+#btn-clear {
+  font-weight: bold;
+  border-color: rgb(165, 151, 151);}

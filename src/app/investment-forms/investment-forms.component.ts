@@ -7,7 +7,7 @@ import { Component, OnInit } from "@angular/core";
 })
 export class InvestmentFormsComponent implements OnInit {
   initialInvestment: number = 0;
-  percentageOfGrowth: number;
+  percentageOfGrowth: number = 0;
   numberOfYears: number = 0;
   averageInvestmentEachYear: number = 0;
   total_investment_value: number;
@@ -26,8 +26,14 @@ export class InvestmentFormsComponent implements OnInit {
         total_investment_single_year * (percentageOfGrowth / 100);
       this.total_investment_value = initialInvestment;
     }
-
     return this.total_investment_value;
+  }
+
+  handleClear() {
+    this.initialInvestment = 0;
+    this.percentageOfGrowth = 0;
+    this.numberOfYears = 0;
+    this.averageInvestmentEachYear = 0;
   }
 
   constructor() {}
